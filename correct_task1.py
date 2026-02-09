@@ -1,3 +1,5 @@
+import math
+
 def calculate_average_order_value(orders):
     if not orders:
         return 0.0
@@ -6,6 +8,10 @@ def calculate_average_order_value(orders):
     valid_count = 0
     
     for order in orders:
+        # Skip if not a dict
+        if not isinstance(order, dict):
+            continue
+        
         # Skip if status is missing or cancelled
         status = order.get("status")
         if status is None or status == "cancelled":
@@ -18,10 +24,12 @@ def calculate_average_order_value(orders):
         
         try:
             numeric_amount = float(amount)
+            # Skip NaN and Inf values
+            if math.isnan(numeric_amount) or math.isinf(numeric_amount):
+                continue
             total += numeric_amount
             valid_count += 1
         except (ValueError, TypeError):
-            # Skip orders with non-numeric amounts
             continue
     
     if valid_count == 0:

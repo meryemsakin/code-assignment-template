@@ -172,7 +172,7 @@ If you were to test this function, what areas or scenarios would you focus on, a
 - **Overstates accuracy**: Claims "accurate average" but the calculation is fundamentally wrong.
 
 ### Rewritten explanation
-- This function calculates the average of valid measurements by filtering out None values and values that cannot be converted to float. It divides the sum by the count of successfully converted values only, ensuring an accurate average. Empty lists or lists with no valid values return 0.0.
+- This function calculates the average of valid measurements by filtering out None values, non-convertible types, and non-finite values (NaN/Inf). It divides the sum by the count of successfully converted finite values only, ensuring an accurate and meaningful average. Empty lists or lists with no valid values return 0.0.
 
 ## 4) Final Judgment
 - **Original Code Decision**: Request Changes

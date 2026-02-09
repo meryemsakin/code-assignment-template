@@ -1,12 +1,12 @@
 import re
 
+# Module-level compiled regex for efficiency
+EMAIL_PATTERN = re.compile(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
+
 def count_valid_emails(emails):
 
     if not emails:
         return 0
-    
-    # Basic email regex pattern
-    email_pattern = re.compile(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
     
     count = 0
     
@@ -17,7 +17,7 @@ def count_valid_emails(emails):
         
         # Strip whitespace and check pattern
         email = email.strip()
-        if email_pattern.match(email):
+        if EMAIL_PATTERN.match(email):
             count += 1
     
     return count
