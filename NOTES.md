@@ -36,4 +36,4 @@ All tests passed successfully.
 
 ## Final Note
 
-Thank you for the opportunity. I enjoyed working on this challenge.
+Thank you for the opportunity. I enjoyed working on this assignment.
