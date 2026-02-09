@@ -33,3 +33,7 @@ All corrected functions were tested locally with various edge cases:
 - NaN/Inf values (for Task 3)
 
 All tests passed successfully.
+
+## Final Note
+
+Thank you for the opportunity. I enjoyed working on this challenge.
